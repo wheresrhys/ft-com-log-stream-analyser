@@ -1,0 +1,4 @@
+{
+    "name": "logstreamanalyser",
+    "description": "Filters heroku runtime metrics into data stores"
+}

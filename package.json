@@ -1,0 +1,10 @@
+{
+  "name": "ft-com-log-stream-analyser",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "@financial-times/n-lambda": "^1.1.2"
+  }
+}
