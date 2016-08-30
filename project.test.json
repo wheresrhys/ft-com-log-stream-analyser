@@ -1,6 +1,6 @@
 {
     "name": "logstreamanalyser",
     "description": "Filters heroku runtime metrics into data stores",
-    "role": "arn:aws:iam::027104099916:role/FTApplicationRoleFor_logstreamanalyser",
+    "role": "arn:aws:iam::371548805176:role/FTApplicationRoleFor_logstreamanalyser",
     "retainedVersions": 10
 }
