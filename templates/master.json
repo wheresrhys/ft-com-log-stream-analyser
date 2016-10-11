@@ -18,9 +18,18 @@
                 "Integration": {
                     "Type":"AWS",
                     "IntegrationHttpMethod": "POST",
-                    "PassthroughBehavior": "WHEN_NO_MATCH",
+                    "PassthroughBehavior": "NEVER",
                     "Credentials": { "Fn::Join": ["", ["arn:aws:iam::", { "Ref": "AWS::AccountId" }, ":role/FTApplicationRoleFor_logstreamanalyser" ]] },
-                    "Uri": { "Fn::Join": ["", ["arn:aws:apigateway:", { "Ref": "AWS::Region" }, ":lambda:path/2015-03-31/functions/arn:aws:lambda:", { "Ref": "AWS::Region" }, ":", { "Ref": "AWS::AccountId" }, ":function:logstreamanalyser_analyse/invocations"] ]}
+                    "Uri": { "Fn::Join": ["", ["arn:aws:apigateway:", { "Ref": "AWS::Region" }, ":lambda:path/2015-03-31/functions/arn:aws:lambda:", { "Ref": "AWS::Region" }, ":", { "Ref": "AWS::AccountId" }, ":function:logstreamanalyser_analyse/invocations"] ]},
+                    "RequestTemplates": {
+                        "application/logplex-1": {
+                            "Fn::Join": ["", [
+                                "{",
+                                "\"rawBody\": \"$util.escapeJavaScript($input.body).replaceAll(\"\\'\",\"'\")\"",
+                                "}"
+                            ]]
+                        }
+                    }
                 }
             }
         },
