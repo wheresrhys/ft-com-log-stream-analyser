@@ -6,3 +6,8 @@ deploy-test:
 
 deploy-prod:
 	@$(MAKE) deploy-super
+
+unit-tes%:
+	mocha functions/*/test --recursive $(if $(findstring watch,$@),-w,)
+
+test: unit-test

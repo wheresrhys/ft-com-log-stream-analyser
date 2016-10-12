@@ -2,6 +2,8 @@
   "name": "ft-com-log-stream-analyser",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.0.2"
+    "mocha": "^3.0.2",
+    "proxyquire": "^1.7.10",
+    "sinon": "^1.17.6"
   }
 }
